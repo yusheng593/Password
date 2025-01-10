@@ -6,8 +6,15 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		84B995A2E31F97BCCD861CF7 /* Pods_Password.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6EC7E4884FE325749CE4FAA /* Pods_Password.framework */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
+		1C011658EC1234448D705B59 /* Pods-Password.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Password.release.xcconfig"; path = "Target Support Files/Pods-Password/Pods-Password.release.xcconfig"; sourceTree = "<group>"; };
+		A6EC7E4884FE325749CE4FAA /* Pods_Password.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Password.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6E5F5A22D30F7F3004B6EEF /* Password.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Password.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F28B78FEFDBDDC0755A15881 /* Pods-Password.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Password.debug.xcconfig"; path = "Target Support Files/Pods-Password/Pods-Password.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -36,17 +43,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84B995A2E31F97BCCD861CF7 /* Pods_Password.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		24950841E589134EC896027E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A6EC7E4884FE325749CE4FAA /* Pods_Password.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C6E5F5992D30F7F3004B6EEF = {
 			isa = PBXGroup;
 			children = (
 				C6E5F5A42D30F7F3004B6EEF /* Password */,
 				C6E5F5A32D30F7F3004B6EEF /* Products */,
+				F0AC14B043E6F2745279980A /* Pods */,
+				24950841E589134EC896027E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,6 +76,15 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		F0AC14B043E6F2745279980A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F28B78FEFDBDDC0755A15881 /* Pods-Password.debug.xcconfig */,
+				1C011658EC1234448D705B59 /* Pods-Password.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -65,9 +92,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C6E5F5B52D30F7F4004B6EEF /* Build configuration list for PBXNativeTarget "Password" */;
 			buildPhases = (
+				59EF2A27D3B2BD7B9C67A56E /* [CP] Check Pods Manifest.lock */,
 				C6E5F59E2D30F7F3004B6EEF /* Sources */,
 				C6E5F59F2D30F7F3004B6EEF /* Frameworks */,
 				C6E5F5A02D30F7F3004B6EEF /* Resources */,
+				2B76E1F081027249ACC293E8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -77,8 +106,6 @@
 				C6E5F5A42D30F7F3004B6EEF /* Password */,
 			);
 			name = Password;
-			packageProductDependencies = (
-			);
 			productName = Password;
 			productReference = C6E5F5A22D30F7F3004B6EEF /* Password.app */;
 			productType = "com.apple.product-type.application";
@@ -127,6 +154,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2B76E1F081027249ACC293E8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Password/Pods-Password-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Password/Pods-Password-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Password/Pods-Password-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		59EF2A27D3B2BD7B9C67A56E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Password-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		C6E5F59E2D30F7F3004B6EEF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -140,12 +209,14 @@
 /* Begin XCBuildConfiguration section */
 		C6E5F5B62D30F7F4004B6EEF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F28B78FEFDBDDC0755A15881 /* Pods-Password.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = H23U829MKV;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Password/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -167,12 +238,14 @@
 		};
 		C6E5F5B72D30F7F4004B6EEF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1C011658EC1234448D705B59 /* Pods-Password.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = H23U829MKV;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Password/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
