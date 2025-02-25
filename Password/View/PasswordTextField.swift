@@ -10,9 +10,8 @@ import UIKit
 class PasswordTextField: UIView {
     private var placeHolderText: String
 
-    lazy var newPasswordTextField: UITextField = {
+    lazy var passwordTextField: UITextField = {
         let textField = UITextField()
-        //        textField.delegate = self
         textField.borderStyle = .none
         textField.isSecureTextEntry = true
         textField.keyboardType = .asciiCapable
@@ -36,11 +35,10 @@ class PasswordTextField: UIView {
         label.font = .systemFont(ofSize: 12)
         label.textAlignment = .center
         label.font = .preferredFont(forTextStyle: .footnote)
-//        label.adjustsFontSizeToFitWidth = true
-//        label.minimumScaleFactor = 0.8
         label.numberOfLines = 0
         label.lineBreakMode = .byWordWrapping
         label.textAlignment = .natural
+        label.isHidden = true
         label.text = "Your password must meet the requirements below."
         return label
     }()
@@ -63,21 +61,21 @@ class PasswordTextField: UIView {
 //MARK: - extension PasswordTextField
 extension PasswordTextField {
     private func setupUI() {
-        addSubview(newPasswordTextField)
-        newPasswordTextField.snp.makeConstraints { make in
+        addSubview(passwordTextField)
+        passwordTextField.snp.makeConstraints { make in
             make.width.equalToSuperview()
         }
 
         addSubview(dividerView)
         dividerView.snp.makeConstraints { make in
             make.height.equalTo(1)
-            make.leading.trailing.equalTo(newPasswordTextField)
-            make.top.equalTo(newPasswordTextField.snp.bottom).offset(8)
+            make.leading.trailing.equalTo(passwordTextField)
+            make.top.equalTo(passwordTextField.snp.bottom).offset(8)
         }
 
         addSubview(errorMessageLabel)
         errorMessageLabel.snp.makeConstraints { make in
-            make.leading.trailing.equalTo(newPasswordTextField)
+            make.leading.trailing.equalTo(passwordTextField)
             make.top.equalTo(dividerView.snp.bottom).offset(4)
         }
     }
@@ -104,8 +102,8 @@ extension PasswordTextField {
     }
 
     @objc private func togglePasswordVisibility(_ sender: UIButton) {
-        newPasswordTextField.isSecureTextEntry.toggle()
-        let imageName = newPasswordTextField.isSecureTextEntry ? "eye.slash.fill" : "eye.fill"
+        passwordTextField.isSecureTextEntry.toggle()
+        let imageName = passwordTextField.isSecureTextEntry ? "eye.slash.fill" : "eye.fill"
         sender.setImage(UIImage(systemName: imageName), for: .normal)
     }
 }
