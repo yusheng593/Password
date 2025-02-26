@@ -58,6 +58,7 @@ class ResetPasswordViewController: UIViewController {
         view.backgroundColor = .systemBackground
 
         setupUI()
+        setupTapGesture()
     }
 
     private func setupUI() {
@@ -80,6 +81,16 @@ class ResetPasswordViewController: UIViewController {
             resetButton.isEnabled = false
             resetButton.backgroundColor = .systemGray
         }
+    }
+
+    private func setupTapGesture() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        tapGesture.cancelsTouchesInView = false
+        view.addGestureRecognizer(tapGesture)
+    }
+
+    @objc private func dismissKeyboard() {
+        view.endEditing(true)
     }
 
 }
@@ -109,6 +120,10 @@ extension ResetPasswordViewController: UITextFieldDelegate {
                     rulesView.ruleView4.reset()
                 }
 
+                if validationResults.allSatisfy({ $0 }) {
+                    newPasswordView.errorMessageLabel.isHidden = true
+                }
+
                 updateResetButtonState()
 
             } else if textField == repeatPasswordView.passwordTextField {
@@ -118,6 +133,7 @@ extension ResetPasswordViewController: UITextFieldDelegate {
 
                 if newPassword != newText {
                     repeatPasswordView.errorMessageLabel.isHidden = false
+                    repeatPasswordView.errorMessageLabel.text = "Password does not match."
                 } else {
                     repeatPasswordView.errorMessageLabel.isHidden = true
                 }
@@ -127,5 +143,31 @@ extension ResetPasswordViewController: UITextFieldDelegate {
             }
         }
         return true
+    }
+
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        textFieldEndEditing(textField)
+    }
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textFieldEndEditing(textField)
+        textField.resignFirstResponder()
+        return true
+    }
+
+    private func textFieldEndEditing(_ textField: UITextField) {
+        if textField == newPasswordView.passwordTextField {
+            let password = textField.text ?? ""
+            let validationResults = ResetPasswordViewModel.validatePassword(password)
+            let isValid = validationResults.allSatisfy { $0 }
+
+            newPasswordView.errorMessageLabel.isHidden = isValid
+
+            if isValid {
+                newPasswordView.errorMessageLabel.text = nil
+            } else {
+                newPasswordView.errorMessageLabel.text = "Your password must meet the requirements below."
+            }
+        }
     }
 }

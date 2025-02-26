@@ -39,7 +39,6 @@ class PasswordTextField: UIView {
         label.lineBreakMode = .byWordWrapping
         label.textAlignment = .natural
         label.isHidden = true
-        label.text = "Your password must meet the requirements below."
         return label
     }()
 
