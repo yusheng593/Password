@@ -10,9 +10,20 @@
 		84B995A2E31F97BCCD861CF7 /* Pods_Password.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6EC7E4884FE325749CE4FAA /* Pods_Password.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		C66EC2452D77F93400A4FC4C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C6E5F59A2D30F7F3004B6EEF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C6E5F5A12D30F7F3004B6EEF;
+			remoteInfo = Password;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		1C011658EC1234448D705B59 /* Pods-Password.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Password.release.xcconfig"; path = "Target Support Files/Pods-Password/Pods-Password.release.xcconfig"; sourceTree = "<group>"; };
 		A6EC7E4884FE325749CE4FAA /* Pods_Password.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Password.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C66EC2412D77F93400A4FC4C /* PasswordTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PasswordTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6E5F5A22D30F7F3004B6EEF /* Password.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Password.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F28B78FEFDBDDC0755A15881 /* Pods-Password.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Password.debug.xcconfig"; path = "Target Support Files/Pods-Password/Pods-Password.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -28,6 +39,11 @@
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		C66EC2422D77F93400A4FC4C /* PasswordTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = PasswordTests;
+			sourceTree = "<group>";
+		};
 		C6E5F5A42D30F7F3004B6EEF /* Password */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
@@ -39,6 +55,13 @@
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		C66EC23E2D77F93400A4FC4C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C6E5F59F2D30F7F3004B6EEF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -62,6 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				C6E5F5A42D30F7F3004B6EEF /* Password */,
+				C66EC2422D77F93400A4FC4C /* PasswordTests */,
 				C6E5F5A32D30F7F3004B6EEF /* Products */,
 				F0AC14B043E6F2745279980A /* Pods */,
 				24950841E589134EC896027E /* Frameworks */,
@@ -72,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				C6E5F5A22D30F7F3004B6EEF /* Password.app */,
+				C66EC2412D77F93400A4FC4C /* PasswordTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -88,6 +113,29 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		C66EC2402D77F93400A4FC4C /* PasswordTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C66EC2492D77F93400A4FC4C /* Build configuration list for PBXNativeTarget "PasswordTests" */;
+			buildPhases = (
+				C66EC23D2D77F93400A4FC4C /* Sources */,
+				C66EC23E2D77F93400A4FC4C /* Frameworks */,
+				C66EC23F2D77F93400A4FC4C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C66EC2462D77F93400A4FC4C /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				C66EC2422D77F93400A4FC4C /* PasswordTests */,
+			);
+			name = PasswordTests;
+			packageProductDependencies = (
+			);
+			productName = PasswordTests;
+			productReference = C66EC2412D77F93400A4FC4C /* PasswordTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		C6E5F5A12D30F7F3004B6EEF /* Password */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = C6E5F5B52D30F7F4004B6EEF /* Build configuration list for PBXNativeTarget "Password" */;
@@ -120,6 +168,11 @@
 				LastSwiftUpdateCheck = 1620;
 				LastUpgradeCheck = 1620;
 				TargetAttributes = {
+					C66EC2402D77F93400A4FC4C = {
+						CreatedOnToolsVersion = 16.2;
+						LastSwiftMigration = 1620;
+						TestTargetID = C6E5F5A12D30F7F3004B6EEF;
+					};
 					C6E5F5A12D30F7F3004B6EEF = {
 						CreatedOnToolsVersion = 16.2;
 					};
@@ -140,11 +193,19 @@
 			projectRoot = "";
 			targets = (
 				C6E5F5A12D30F7F3004B6EEF /* Password */,
+				C66EC2402D77F93400A4FC4C /* PasswordTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		C66EC23F2D77F93400A4FC4C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C6E5F5A02D30F7F3004B6EEF /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -197,6 +258,13 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		C66EC23D2D77F93400A4FC4C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C6E5F59E2D30F7F3004B6EEF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -206,7 +274,54 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		C66EC2462D77F93400A4FC4C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C6E5F5A12D30F7F3004B6EEF /* Password */;
+			targetProxy = C66EC2452D77F93400A4FC4C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		C66EC2472D77F93400A4FC4C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = H23U829MKV;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yusheng.PasswordTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Password.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Password";
+			};
+			name = Debug;
+		};
+		C66EC2482D77F93400A4FC4C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = H23U829MKV;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yusheng.PasswordTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Password.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Password";
+			};
+			name = Release;
+		};
 		C6E5F5B62D30F7F4004B6EEF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F28B78FEFDBDDC0755A15881 /* Pods-Password.debug.xcconfig */;
@@ -387,6 +502,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		C66EC2492D77F93400A4FC4C /* Build configuration list for PBXNativeTarget "PasswordTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C66EC2472D77F93400A4FC4C /* Debug */,
+				C66EC2482D77F93400A4FC4C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		C6E5F59D2D30F7F3004B6EEF /* Build configuration list for PBXProject "Password" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

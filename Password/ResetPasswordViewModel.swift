@@ -6,30 +6,30 @@
 //
 
 class ResetPasswordViewModel {
-    private static var isNewPasswordValid: Bool = false
-    private static var arePasswordsMatching:Bool = false
+    private var isNewPasswordValid: Bool = false
+    private var arePasswordsMatching:Bool = false
 
-    static func validateLengthAndNoSpaces(_ password: String) -> Bool {
+    func validateLengthAndNoSpaces(_ password: String) -> Bool {
         return password.count >= 8 && password.count <= 32 && !password.contains(" ")
     }
 
-    static func containsUppercaseLetter(_ password: String) -> Bool {
+    func containsUppercaseLetter(_ password: String) -> Bool {
         return password.range(of: "[A-Z]", options: .regularExpression) != nil
     }
 
-    static func containsLowercaseLetter(_ password: String) -> Bool {
+    func containsLowercaseLetter(_ password: String) -> Bool {
         return password.range(of: "[a-z]", options: .regularExpression) != nil
     }
 
-    static func containsDigit(_ password: String) -> Bool {
+    func containsDigit(_ password: String) -> Bool {
         return password.range(of: "\\d", options: .regularExpression) != nil
     }
 
-    static func containsSpecialCharacter(_ password: String) -> Bool {
+    func containsSpecialCharacter(_ password: String) -> Bool {
         return password.range(of: "[!@#$%^]", options: .regularExpression) != nil
     }
 
-    static func validatePassword(_ password: String) -> [Bool] {
+    func validatePassword(_ password: String) -> [Bool] {
         return [
             validateLengthAndNoSpaces(password),
             containsUppercaseLetter(password),
@@ -39,7 +39,7 @@ class ResetPasswordViewModel {
         ]
     }
 
-    static func validatePasswords(newPassword: String, repeatPassword: String) {
+    func validatePasswords(newPassword: String, repeatPassword: String) {
         // 驗證新密碼規則
         let isPasswordValid = validatePassword(newPassword).allSatisfy { $0 }
         let areMatching = newPassword == repeatPassword
@@ -49,7 +49,7 @@ class ResetPasswordViewModel {
         self.arePasswordsMatching = areMatching
     }
 
-    static func isButtonCanUse() -> Bool {
+    func isButtonCanUse() -> Bool {
         return isNewPasswordValid && arePasswordsMatching
     }
 }
